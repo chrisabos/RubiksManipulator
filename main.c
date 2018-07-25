@@ -306,6 +306,12 @@ void M() {
 	cube[2][4] = temp;
 }
 
+void Mi() {
+	M();
+	M();
+	M();
+}
+
 void E() {
 	char temp;
 
@@ -331,78 +337,137 @@ void E() {
 	cube[4][4] = temp;
 }
 
+void Ei() {
+	E();
+	E();
+	E();
+}
+
 void S() {
 	char temp;
 
 	//middle edges 1
 	temp = cube[0][3];
-	cube[0][3] = cube[][];
-	cube[][] = cube[][];
-	cube[][] = cube[][];
-	cube[][] = temp;
+	cube[0][3] = cube[5][7];
+	cube[5][7] = cube[1][5];
+	cube[1][5] = cube[4][1];
+	cube[4][1] = temp;
 
 	//middle edges 2
 	temp = cube[0][5];
-	cube[0][5] = cube[][];
-	cube[][] = cube[][];
-	cube[][] = cube[][];
-	cube[][] = temp;
+	cube[0][5] = cube[5][1];
+	cube[5][1] = cube[1][3];
+	cube[1][3] = cube[4][7];
+	cube[4][7] = temp;
 
 	//middle middles
 	temp = cube[0][4];
-	cube[0][4] = cube[][4];
-	cube[][4] = cube[][4];
-	cube[][4] = cube[][4];
-	cube[][4] = temp;
+	cube[0][4] = cube[5][4];
+	cube[5][4] = cube[1][4];
+	cube[1][4] = cube[4][4];
+	cube[4][4] = temp;
+}
+
+void Si() {
+	S();
+	S();
+	S();
+}
+
+void u() {
+	U();
+	Ei();
+}
+
+void ui() {
+	Ui();
+	E();
+}
+
+void l() {
+	L();
+	M();
+}
+
+void li() {
+	Li();
+	Mi();
+}
+
+void f() {
+	F();
+	S();
+}
+
+void fi() {
+	Fi();
+	Si();
+}
+
+void r() {
+	R();
+	Mi();
+}
+
+void ri() {
+	Ri();
+	M();
+}
+
+void b() {
+	B();
+	Si();
+}
+
+void bi() {
+	Bi();
+	S();
+}
+
+void d() {
+	D();
+	E();
+}
+
+void di() {
+	Di();
+	Ei();
+}
+
+void X() {
+	R();
+	Li();
+	Mi();
+}
+
+void Xi() {
+	Ri();
+	L();
+	M();
+}
+
+void Y() {
+	U();
+	Di();
+	Ei();
+}
+
+void Yi() {
+	Ui();
+	D();
+	E();
 }
 
 void Z() {
-	char top[9];
-	int i;
+	F();
+	S();
+	Bi();
+}
 
-	for(i = 0; i < 9; i++) {
-		top[i] = cube[0][i];
-	}
-
-	cube[0][0] = cube[5][6];
-	cube[0][1] = cube[5][3];
-	cube[0][2] = cube[5][0];
-	cube[0][3] = cube[5][7];
-	cube[0][4] = cube[5][4];
-	cube[0][5] = cube[5][1];
-	cube[0][6] = cube[5][8];
-	cube[0][7] = cube[5][5];
-	cube[0][8] = cube[5][2];
-
-	cube[5][0] = cube[1][6];
-	cube[5][1] = cube[1][3];
-	cube[5][2] = cube[1][0];
-	cube[5][3] = cube[1][7];
-	cube[5][4] = cube[1][4];
-	cube[5][5] = cube[1][1];
-	cube[5][6] = cube[1][8];
-	cube[5][7] = cube[1][5];
-	cube[5][8] = cube[1][2];
-
-	cube[1][0] = cube[4][6];
-	cube[1][1] = cube[4][3];
-	cube[1][2] = cube[4][0];
-	cube[1][3] = cube[4][7];
-	cube[1][4] = cube[4][4];
-	cube[1][5] = cube[4][1];
-	cube[1][6] = cube[4][8];
-	cube[1][7] = cube[4][5];
-	cube[1][8] = cube[4][2];
-
-	cube[4][0] = top[6];
-	cube[4][1] = top[3];
-	cube[4][2] = top[0];
-	cube[4][3] = top[7];
-	cube[4][4] = top[4];
-	cube[4][5] = top[1];
-	cube[4][6] = top[8];
-	cube[4][7] = top[5];
-	cube[4][8] = top[2];
+void Zi() {
+	Fi();
+	Si();
+	B();
 }
 
 void display() {
@@ -472,6 +537,176 @@ int main(int argc, char *argv[]) {
 					Di();
 					display();
 				}
+				else if(ch2 == 'M') {
+					printf("M\'\n");
+					Mi();
+					display();
+				}
+				else if(ch2 == 'E') {
+					printf("E\'\n");
+					Ei();
+					display();
+				}
+				else if(ch2 == 'S') {
+					printf("S\'\n");
+					Si();
+					display();
+				}
+				else if(ch2 == 'X') {
+					printf("X\'\n");
+					Xi();
+					display();
+				}
+				else if(ch2 == 'Y') {
+					printf("Y\'\n");
+					Yi();
+					display();
+				}
+				else if(ch2 == 'Z') {
+					printf("Z\'\n");
+					Zi();
+					display();
+				}
+				else if(ch2 == 'u') {
+					printf("u\'\n");
+					ui();
+					display();
+				}
+				else if(ch2 == 'l') {
+					printf("l\'\n");
+					li();
+					display();
+				}
+				else if(ch2 == 'f') {
+					printf("f\'\n");
+					fi();
+					display();
+				}
+				else if(ch2 == 'r') {
+					printf("r\'\n");
+					ri();
+					display();
+				}
+				else if(ch2 == 'b') {
+					printf("b\'\n");
+					bi();
+					display();
+				}
+				else if(ch2 == 'd') {
+					printf("d\'\n");
+					di();
+					display();
+				}
+			}
+			else if(ch1 == '2') {
+				if(ch2 == 'U') {
+					printf("U2\n");
+					U();
+					U();
+					display();
+				}
+				else if(ch2 == 'L') {
+					printf("L2\n");
+					L();
+					L();
+					display();
+				}
+				else if(ch2 == 'F') {
+					printf("F2\n");
+					F();
+					F();
+					display();
+				}
+				else if(ch2 == 'R') {
+					printf("R2\n");
+					R();
+					R();
+					display();
+				}
+				else if(ch2 == 'B') {
+					printf("B2\n");
+					B();
+					B();
+					display();
+				}
+				else if(ch2 == 'D') {
+					printf("D2\n");
+					D();
+					D();
+					display();
+				}
+				else if(ch2 == 'M') {
+					printf("M2\n");
+					M();
+					M();
+					display();
+				}
+				else if(ch2 == 'E') {
+					printf("E2\n");
+					E();
+					E();
+					display();
+				}
+				else if(ch2 == 'S') {
+					printf("S2\n");
+					S();
+					S();
+					display();
+				}
+				else if(ch2 == 'X') {
+					printf("X2\n");
+					X();
+					X();
+					display();
+				}
+				else if(ch2 == 'Y') {
+					printf("Y2\n");
+					Y();
+					Y();
+					display();
+				}
+				else if(ch2 == 'Z') {
+					printf("Z2\n");
+					Z();
+					Z();
+					display();
+				}
+				else if(ch2 == 'u') {
+					printf("u\n");
+					u();
+					u();
+					display();
+				}
+				else if(ch2 == 'l') {
+					printf("l\n");
+					l();
+					l();
+					display();
+				}
+				else if(ch2 == 'f') {
+					printf("f\n");
+					f();
+					f();
+					display();
+				}
+				else if(ch2 == 'r') {
+					printf("r\n");
+					r();
+					r();
+					display();
+				}
+				else if(ch2 == 'b') {
+					printf("b\n");
+					b();
+					b();
+					display();
+				}
+				else if(ch2 == 'd') {
+					printf("d\n");
+					d();
+					d();
+					display();
+				}
 			}
 			else if(ch1 == 'U') {
 				printf("U\n");
@@ -503,14 +738,70 @@ int main(int argc, char *argv[]) {
 				D();
 				display();
 			}
-		} 
+			else if(ch1 == 'M') {
+				printf("M\n");
+				M();
+				display();
+			}
+			else if(ch1 == 'E') {
+				printf("E\n");
+				E();
+				display();
+			}
+			else if(ch1 == 'S') {
+				printf("S\n");
+				S();
+				display();
+			}
+			else if(ch1 == 'X') {
+				printf("X\n");
+				X();
+				display();
+			}
+			else if(ch1 == 'Y') {
+				printf("Y\n");
+				Y();
+				display();
+			}
+			else if(ch1 == 'Z') {
+				printf("Z\n");
+				Z();
+				display();
+			}
+			else if(ch1 == 'u') {
+				printf("u\n");
+				u();
+				display();
+			}
+			else if(ch1 == 'l') {
+				printf("l\n");
+				l();
+				display();
+			}
+			else if(ch1 == 'f') {
+				printf("f\n");
+				f();
+				display();
+			}
+			else if(ch1 == 'r') {
+				printf("r\n");
+				r();
+				display();
+			}
+			else if(ch1 == 'b') {
+				printf("b\n");
+				b();
+				display();
+			}
+			else if(ch1 == 'd') {
+				printf("d\n");
+				d();
+				display();
+			}
+		}
 	}
 
 	fclose(fp);
-
-	display();
-	E();
-	display();
 
 	return 0;
 }
