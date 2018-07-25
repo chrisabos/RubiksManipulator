@@ -470,6 +470,23 @@ void Zi() {
 	B();
 }
 
+int check() {
+	int ret = 1;
+
+	int i;
+	int k;
+	for(i = 0; i < 6; i++) {
+		for(k = 1; k < 9; k++) {
+			if(cube[i][k] != cube[i][0]) {
+				ret = 0;
+				break;
+			}
+		}
+	}
+
+	return ret;
+}
+
 void display() {
 	printf("###########################\n");
 	printf("\n");
@@ -496,310 +513,321 @@ int main(int argc, char *argv[]) {
 		return 0;
 	}
 
+	int complete = 0;
+	int cycles = 0;
 	char ch2;
 	char ch1;
 	char ch;
 
-	while(!feof(fp)) {
-		ch2 = ch1;
-		ch1 = ch;
-		ch = fgetc(fp);
+	while(complete == 0) {
+		while(!feof(fp)) {
+			ch2 = ch1;
+			ch1 = ch;
+			ch = fgetc(fp);
 
-		if(ch == ' ' || feof(fp)) {
-			if(ch1 == '\'') {
-				if(ch2 == 'U') {
-					printf("U\'\n");
-					Ui();
-					display();
+			if(ch == ' ' || feof(fp)) {
+				if(ch1 == '\'') {
+					if(ch2 == 'U') {
+						printf("U\'\n");
+						Ui();
+						display();
+					}
+					else if(ch2 == 'L') {
+						printf("L\'\n");
+						Li();
+						display();
+					}
+					else if(ch2 == 'F') {
+						printf("F\'\n");
+						Fi();
+						display();
+					}
+					else if(ch2 == 'R') {
+						printf("R\'\n");
+						Ri();
+						display();
+					}
+					else if(ch2 == 'B') {
+						printf("B\'\n");
+						Bi();
+						display();
+					}
+					else if(ch2 == 'D') {
+						printf("D\'\n");
+						Di();
+						display();
+					}
+					else if(ch2 == 'M') {
+						printf("M\'\n");
+						Mi();
+						display();
+					}
+					else if(ch2 == 'E') {
+						printf("E\'\n");
+						Ei();
+						display();
+					}
+					else if(ch2 == 'S') {
+						printf("S\'\n");
+						Si();
+						display();
+					}
+					else if(ch2 == 'X') {
+						printf("X\'\n");
+						Xi();
+						display();
+					}
+					else if(ch2 == 'Y') {
+						printf("Y\'\n");
+						Yi();
+						display();
+					}
+					else if(ch2 == 'Z') {
+						printf("Z\'\n");
+						Zi();
+						display();
+					}
+					else if(ch2 == 'u') {
+						printf("u\'\n");
+						ui();
+						display();
+					}
+					else if(ch2 == 'l') {
+						printf("l\'\n");
+						li();
+						display();
+					}
+					else if(ch2 == 'f') {
+						printf("f\'\n");
+						fi();
+						display();
+					}
+					else if(ch2 == 'r') {
+						printf("r\'\n");
+						ri();
+						display();
+					}
+					else if(ch2 == 'b') {
+						printf("b\'\n");
+						bi();
+						display();
+					}
+					else if(ch2 == 'd') {
+						printf("d\'\n");
+						di();
+						display();
+					}
 				}
-				else if(ch2 == 'L') {
-					printf("L\'\n");
-					Li();
-					display();
+				else if(ch1 == '2') {
+					if(ch2 == 'U') {
+						printf("U2\n");
+						U();
+						U();
+						display();
+					}
+					else if(ch2 == 'L') {
+						printf("L2\n");
+						L();
+						L();
+						display();
+					}
+					else if(ch2 == 'F') {
+						printf("F2\n");
+						F();
+						F();
+						display();
+					}
+					else if(ch2 == 'R') {
+						printf("R2\n");
+						R();
+						R();
+						display();
+					}
+					else if(ch2 == 'B') {
+						printf("B2\n");
+						B();
+						B();
+						display();
+					}
+					else if(ch2 == 'D') {
+						printf("D2\n");
+						D();
+						D();
+						display();
+					}
+					else if(ch2 == 'M') {
+						printf("M2\n");
+						M();
+						M();
+						display();
+					}
+					else if(ch2 == 'E') {
+						printf("E2\n");
+						E();
+						E();
+						display();
+					}
+					else if(ch2 == 'S') {
+						printf("S2\n");
+						S();
+						S();
+						display();
+					}
+					else if(ch2 == 'X') {
+						printf("X2\n");
+						X();
+						X();
+						display();
+					}
+					else if(ch2 == 'Y') {
+						printf("Y2\n");
+						Y();
+						Y();
+						display();
+					}
+					else if(ch2 == 'Z') {
+						printf("Z2\n");
+						Z();
+						Z();
+						display();
+					}
+					else if(ch2 == 'u') {
+						printf("u\n");
+						u();
+						u();
+						display();
+					}
+					else if(ch2 == 'l') {
+						printf("l\n");
+						l();
+						l();
+						display();
+					}
+					else if(ch2 == 'f') {
+						printf("f\n");
+						f();
+						f();
+						display();
+					}
+					else if(ch2 == 'r') {
+						printf("r\n");
+						r();
+						r();
+						display();
+					}
+					else if(ch2 == 'b') {
+						printf("b\n");
+						b();
+						b();
+						display();
+					}
+					else if(ch2 == 'd') {
+						printf("d\n");
+						d();
+						d();
+						display();
+					}
 				}
-				else if(ch2 == 'F') {
-					printf("F\'\n");
-					Fi();
-					display();
-				}
-				else if(ch2 == 'R') {
-					printf("R\'\n");
-					Ri();
-					display();
-				}
-				else if(ch2 == 'B') {
-					printf("B\'\n");
-					Bi();
-					display();
-				}
-				else if(ch2 == 'D') {
-					printf("D\'\n");
-					Di();
-					display();
-				}
-				else if(ch2 == 'M') {
-					printf("M\'\n");
-					Mi();
-					display();
-				}
-				else if(ch2 == 'E') {
-					printf("E\'\n");
-					Ei();
-					display();
-				}
-				else if(ch2 == 'S') {
-					printf("S\'\n");
-					Si();
-					display();
-				}
-				else if(ch2 == 'X') {
-					printf("X\'\n");
-					Xi();
-					display();
-				}
-				else if(ch2 == 'Y') {
-					printf("Y\'\n");
-					Yi();
-					display();
-				}
-				else if(ch2 == 'Z') {
-					printf("Z\'\n");
-					Zi();
-					display();
-				}
-				else if(ch2 == 'u') {
-					printf("u\'\n");
-					ui();
-					display();
-				}
-				else if(ch2 == 'l') {
-					printf("l\'\n");
-					li();
-					display();
-				}
-				else if(ch2 == 'f') {
-					printf("f\'\n");
-					fi();
-					display();
-				}
-				else if(ch2 == 'r') {
-					printf("r\'\n");
-					ri();
-					display();
-				}
-				else if(ch2 == 'b') {
-					printf("b\'\n");
-					bi();
-					display();
-				}
-				else if(ch2 == 'd') {
-					printf("d\'\n");
-					di();
-					display();
-				}
-			}
-			else if(ch1 == '2') {
-				if(ch2 == 'U') {
-					printf("U2\n");
+				else if(ch1 == 'U') {
+					printf("U\n");
 					U();
-					U();
 					display();
 				}
-				else if(ch2 == 'L') {
-					printf("L2\n");
-					L();
+				else if(ch1 == 'L') {
+					printf("L\n");
 					L();
 					display();
 				}
-				else if(ch2 == 'F') {
-					printf("F2\n");
-					F();
+				else if(ch1 == 'F') {
+					printf("F\n");
 					F();
 					display();
 				}
-				else if(ch2 == 'R') {
-					printf("R2\n");
-					R();
+				else if(ch1 == 'R') {
+					printf("R\n");
 					R();
 					display();
 				}
-				else if(ch2 == 'B') {
-					printf("B2\n");
-					B();
+				else if(ch1 == 'B') {
+					printf("B\n");
 					B();
 					display();
 				}
-				else if(ch2 == 'D') {
-					printf("D2\n");
-					D();
+				else if(ch1 == 'D') {
+					printf("D\n");
 					D();
 					display();
 				}
-				else if(ch2 == 'M') {
-					printf("M2\n");
-					M();
+				else if(ch1 == 'M') {
+					printf("M\n");
 					M();
 					display();
 				}
-				else if(ch2 == 'E') {
-					printf("E2\n");
-					E();
+				else if(ch1 == 'E') {
+					printf("E\n");
 					E();
 					display();
 				}
-				else if(ch2 == 'S') {
-					printf("S2\n");
-					S();
+				else if(ch1 == 'S') {
+					printf("S\n");
 					S();
 					display();
 				}
-				else if(ch2 == 'X') {
-					printf("X2\n");
-					X();
+				else if(ch1 == 'X') {
+					printf("X\n");
 					X();
 					display();
 				}
-				else if(ch2 == 'Y') {
-					printf("Y2\n");
-					Y();
+				else if(ch1 == 'Y') {
+					printf("Y\n");
 					Y();
 					display();
 				}
-				else if(ch2 == 'Z') {
-					printf("Z2\n");
-					Z();
+				else if(ch1 == 'Z') {
+					printf("Z\n");
 					Z();
 					display();
 				}
-				else if(ch2 == 'u') {
+				else if(ch1 == 'u') {
 					printf("u\n");
 					u();
-					u();
 					display();
 				}
-				else if(ch2 == 'l') {
+				else if(ch1 == 'l') {
 					printf("l\n");
 					l();
-					l();
 					display();
 				}
-				else if(ch2 == 'f') {
+				else if(ch1 == 'f') {
 					printf("f\n");
 					f();
-					f();
 					display();
 				}
-				else if(ch2 == 'r') {
+				else if(ch1 == 'r') {
 					printf("r\n");
 					r();
-					r();
 					display();
 				}
-				else if(ch2 == 'b') {
+				else if(ch1 == 'b') {
 					printf("b\n");
 					b();
-					b();
 					display();
 				}
-				else if(ch2 == 'd') {
+				else if(ch1 == 'd') {
 					printf("d\n");
 					d();
-					d();
 					display();
 				}
 			}
-			else if(ch1 == 'U') {
-				printf("U\n");
-				U();
-				display();
-			}
-			else if(ch1 == 'L') {
-				printf("L\n");
-				L();
-				display();
-			}
-			else if(ch1 == 'F') {
-				printf("F\n");
-				F();
-				display();
-			}
-			else if(ch1 == 'R') {
-				printf("R\n");
-				R();
-				display();
-			}
-			else if(ch1 == 'B') {
-				printf("B\n");
-				B();
-				display();
-			}
-			else if(ch1 == 'D') {
-				printf("D\n");
-				D();
-				display();
-			}
-			else if(ch1 == 'M') {
-				printf("M\n");
-				M();
-				display();
-			}
-			else if(ch1 == 'E') {
-				printf("E\n");
-				E();
-				display();
-			}
-			else if(ch1 == 'S') {
-				printf("S\n");
-				S();
-				display();
-			}
-			else if(ch1 == 'X') {
-				printf("X\n");
-				X();
-				display();
-			}
-			else if(ch1 == 'Y') {
-				printf("Y\n");
-				Y();
-				display();
-			}
-			else if(ch1 == 'Z') {
-				printf("Z\n");
-				Z();
-				display();
-			}
-			else if(ch1 == 'u') {
-				printf("u\n");
-				u();
-				display();
-			}
-			else if(ch1 == 'l') {
-				printf("l\n");
-				l();
-				display();
-			}
-			else if(ch1 == 'f') {
-				printf("f\n");
-				f();
-				display();
-			}
-			else if(ch1 == 'r') {
-				printf("r\n");
-				r();
-				display();
-			}
-			else if(ch1 == 'b') {
-				printf("b\n");
-				b();
-				display();
-			}
-			else if(ch1 == 'd') {
-				printf("d\n");
-				d();
-				display();
-			}
 		}
+
+		rewind(fp);
+
+		complete = check();
+		cycles++;
 	}
+
+	printf("This pattern took %d cycles to return to a complete cube\n", cycles);
 
 	fclose(fp);
 
